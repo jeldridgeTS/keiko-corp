@@ -249,11 +249,29 @@
 		<p class="copyright animated wow fadeIn" data-wow-duration="2s"> <strong>Pixelhint</strong>
 	</footer>
 	<!--  End Footer Section  -->
-	<script defer type="text/javascript" src="js/owl.carousel.min.js"></script>
-	<script type="text/javascript" src="js/wow.min.js"></script>
-	<script type="text/javascript" src="js/parallax.min.js"></script>
-	<script async type="text/javascript" src="js/nicescroll.min.js"></script>
-	<script type="text/javascript" src="js/main.min.js"></script>
+	<script type="text/javascript">
+		const loadStyleSheet = src => {
+			if (document.createStyleSheet) {
+				document.createStyleSheet(src)
+			} else {
+				const stylesheet = document.createElement('link')
+				stylesheet.href = src
+				stylesheet.type = 'text/css'
+				document.getElementsByTagName('head')[0].append(stylesheet)
+			}
+		}
+
+		window.onload = function (argument) {
+			console.log('window done')
+			// loadStyleSheet('./css/owl.theme.min.css')
+		}
+	</script>
+
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script defer type="text/javascript" src="js/wow.min.js"></script>
+	<script defer type="text/javascript" src="js/parallax.min.js"></script>
+	<script type="text/javascript" src="js/nicescroll.min.js"></script>
+	<script defer type="text/javascript" src="js/main.min.js"></script>
 	<script defer type="text/javascript" src="js/scrollTo.min.js"></script>
 </body>
 </html>
