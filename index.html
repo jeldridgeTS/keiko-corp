@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" />
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" type="text/css" href="css/owl.theme.min.css"/>
+	<!-- <link rel="stylesheet" type="text/css" href="css/owl.theme.min.css"/> -->
 	<link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
 	<link rel="stylesheet" type="text/css" href="css/main.min.css"/>
 
@@ -251,19 +251,16 @@
 	<!--  End Footer Section  -->
 	<script type="text/javascript">
 		const loadStyleSheet = src => {
-			if (document.createStyleSheet) {
-				document.createStyleSheet(src)
-			} else {
-				const stylesheet = document.createElement('link')
-				stylesheet.href = src
-				stylesheet.type = 'text/css'
-				document.getElementsByTagName('head')[0].append(stylesheet)
-			}
+			const stylesheet = document.createElement('link')
+			stylesheet.href = src
+			stylesheet.type = 'text/css'
+			stylesheet.rel = 'stylesheet'
+			document.getElementsByTagName('head')[0].append(stylesheet)
 		}
 
-		window.onload = function (argument) {
+		window.onload = argument => {
 			console.log('window done')
-			// loadStyleSheet('./css/owl.theme.min.css')
+			loadStyleSheet('./css/owl.theme.min.css')
 		}
 	</script>
 
